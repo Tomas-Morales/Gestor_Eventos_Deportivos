@@ -45,15 +45,4 @@ public class EventoDAO {
                 .collect(Collectors.toList());
     }
 
-    public boolean procesarVentaEntradas(int idEvento, int cantidadEntradas) {
-        Optional<Evento> eventoEncontrado = buscarEventoPorId(idEvento);
-        if (eventoEncontrado.isPresent()) {
-            Evento evento = eventoEncontrado.get();
-            if (evento.getEntradasVendidas() + cantidadEntradas <= evento.getCapacidad()) {
-                evento.setEntradasVendidas(evento.getEntradasVendidas() + cantidadEntradas);
-                return true;
-            }
-        }
-        return false;
-    }
 }

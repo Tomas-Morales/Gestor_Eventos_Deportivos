@@ -48,14 +48,4 @@ public class JugadorDAO {
         return listaJugadores.stream().filter(j -> j.getId() == identificador).findFirst();
     }
 
-    public boolean cambiarEquipoJugador(int idJugador, int nuevoEquipoId) {
-        Optional<Jugador> jugadorEncontrado = buscarJugadorPorId(idJugador);
-
-        if (jugadorEncontrado.isPresent()) {
-            Jugador jugador = jugadorEncontrado.get();
-            jugador.setEquipoId(nuevoEquipoId);
-            return true;
-        }
-        return false;
-    }
 }
